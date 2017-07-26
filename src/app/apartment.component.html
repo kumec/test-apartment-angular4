@@ -1,0 +1,62 @@
+<div class="row form-group">
+    <div class="col-md-9">
+        <h4>All Apartments</h4>
+    </div>
+    <div class="col-md-3 text-right">
+        <button class="btn btn-success"
+                routerLink="/add">Add New Apartment
+        </button>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <tr class="warning">
+            <th class="text-center"
+                style="vertical-align: middle">ID#
+            </th>
+            <th class="text-center"
+                style="vertical-align: middle">Count Rooms
+            </th>
+            <th class="text-center"
+                style="vertical-align: middle">Count Bathrooms
+            </th>
+            <th class="text-center"
+                style="vertical-align: middle">Square
+            </th>
+            <th class="text-center"
+                style="vertical-align: middle">Has Parking
+            </th>
+            <th class="text-center"
+                style="vertical-align: middle">Address
+            </th>
+            <th class="text-center"
+                style="vertical-align: middle">Comment
+            </th>
+            <th class="text-center"
+                style="vertical-align: middle">Owner Email
+            </th>
+            <th class="text-center">View</th>
+        </tr>
+
+        <tr *ngFor="let apartment of apartments">
+            <td>{{apartment.id}}</td>
+            <td>{{apartment.count_rooms}}</td>
+            <td>{{apartment.count_bathrooms}}</td>
+            <td>{{apartment.square}}</td>
+            <td>{{apartment.has_parking}}</td>
+            <td>{{apartment.unit}} {{apartment.street}}, {{apartment.building}} {{apartment.zip_code}}
+                {{apartment.city}} {{apartment.region}} {{apartment.country}}
+            </td>
+            <td>{{apartment.comment}}</td>
+            <td>{{apartment.owner_email}}</td>
+            <td class="text-center">
+                <button type="button"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        class="btn btn-default btn-block btn-xs"
+                        (click)="viewDetail(apartment.id)"><i class="fa fa-eye" aria-hidden="true"></i></button>
+            </td>
+
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,111 @@
+<div class="col-md-offset-3 col-md-6" *ngIf="apartment">
+    <div class="panel panel-default">
+        <div class="row" style="margin: 0">
+            <div class="col-md-12 text-center form-header">
+                <h4>Update Apartment Details</h4>
+            </div>
+        </div>
+        <div class="panel-body">
+            <form [formGroup]="apartmentUpdateForm"
+                  (ngSubmit)="update()"
+                  novalidate>
+                <div class="form-group">
+                    <label for="count_rooms">Count Rooms</label>
+                    <input id="count_rooms"
+                           value="{{apartment.count_rooms}}"
+                           class="form-control"
+                           formControlName="count_rooms">
+                </div>
+                <div class="form-group">
+                    <label for="count_bathrooms">Count Bathrooms</label>
+                    <input id="count_bathrooms"
+                           value="{{apartment.count_bathrooms}}"
+                           class="form-control"
+                           formControlName="count_bathrooms">
+                </div>
+                <div class="form-group">
+                    <label for="square">Square</label>
+                    <input id="square"
+                           value="{{apartment.square}}"
+                           class="form-control"
+                           formControlName="square">
+                </div>
+                <div class="form-group">
+                    <label for="has_parking">Has Parking</label>
+                    <input id="has_parking"
+                           value="{{apartment.has_parking}}"
+                           type="checkbox"
+                           class="form-control"
+                           formControlName="has_parking">
+                </div>
+                <div class="form-group">
+                    <label for="unit">Unit</label>
+                    <input id="unit"
+                           value="{{apartment.unit}}"
+                           class="form-control"
+                           formControlName="unit">
+                </div>
+                <div class="form-group">
+                    <label for="building">Building</label>
+                    <input id="building"
+                           value="{{apartment.building}}"
+                           class="form-control"
+                           formControlName="building">
+                </div>
+                <div class="form-group">
+                    <label for="street">Street</label>
+                    <input id="street"
+                           value="{{apartment.street}}"
+                           class="form-control"
+                           formControlName="street">
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input id="city"
+                           value="{{apartment.city}}"
+                           class="form-control"
+                           formControlName="city">
+                </div>
+                <div class="form-group">
+                    <label for="region">Region</label>
+                    <input id="region"
+                           value="{{apartment.region}}"
+                           class="form-control"
+                           formControlName="region">
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input id="country"
+                           value="{{apartment.country}}"
+                           class="form-control"
+                           formControlName="country">
+                </div>
+                <div class="form-group">
+                    <label for="zip_code">Zip Code</label>
+                    <input id="zip_code"
+                           value="{{apartment.zip_code}}"
+                           class="form-control"
+                           formControlName="zip_code">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comment</label>
+                    <input id="comment"
+                           value="{{apartment.comment}}"
+                           class="form-control"
+                           formControlName="comment">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success"
+                            type="submit"
+                            [disabled]="!apartmentUpdateForm.valid">Update Apartment
+                    </button>
+                    <button type="button"
+                            (click)="remove()"
+                            class="btn btn-danger">Delete Apartment
+                    </button>
+                    <button type="button" class="btn btn-default" (click)="goBack()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

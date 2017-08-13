@@ -46,10 +46,10 @@ export class ApartmentUpdateComponent implements OnInit {
 
     buildForm(): void {
         this.apartmentUpdateForm = this.formBuilder.group({
-            count_rooms: [this.apartment.count_rooms, Validators.required],
-            count_bathrooms: [this.apartment.count_bathrooms, Validators.required],
+            countRooms: [this.apartment.countRooms, Validators.required],
+            countBathrooms: [this.apartment.countBathrooms, Validators.required],
             square: [this.apartment.square, Validators.required],
-            has_parking: [this.apartment.has_parking, Validators.required],
+            hasParking: [this.apartment.hasParking, Validators.required],
             comment: [this.apartment.comment],
             unit: [this.apartment.unit],
             building: [this.apartment.building, Validators.required],
@@ -57,7 +57,7 @@ export class ApartmentUpdateComponent implements OnInit {
             city: [this.apartment.city, Validators.required],
             region: [this.apartment.region, Validators.required],
             country: [this.apartment.country, Validators.required],
-            zip_code: [this.apartment.zip_code, Validators.required],
+            zipCode: [this.apartment.zipCode, Validators.required],
         });
     }
 

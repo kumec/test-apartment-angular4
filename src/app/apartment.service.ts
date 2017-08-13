@@ -8,7 +8,7 @@ export class ApartmentService {
 
     private host = window.location.hostname;
     private headers = new Headers({'Content-Type': 'application/json'});
-    private apartmentsURL = `http://${this.host}:8080/api`;
+    private apartmentsURL = `http://${this.host}:8080/apartment`;
 
     constructor(private http: Http) {
     };
@@ -42,6 +42,8 @@ export class ApartmentService {
     /**
      * Returns apartment based on id for edit
      * @param id:string
+     * @param token:string
+     *
      * @returns {Promise<Apartment>}
      */
     getApartmentForEdit(id: string, token: string): Promise<Apartment> {
@@ -65,25 +67,28 @@ export class ApartmentService {
     add(apartment: Apartment): Promise<Apartment> {
         return this.http.post(this.apartmentsURL, JSON.stringify(apartment), {headers: this.headers})
             .toPromise()
-            .then(response => response.json() as Apartment)
+            .then(response => { if (response.status != 201 ){ response.json() as Apartment} } )
             .catch(this.handleError)
     }
 
     /**
      * Updates apartment that matches to id
      * @param apartment:Apartment
+     * @param id:string
+     * @param token:string
      * @returns {Promise<Apartment>}
      */
     update(apartment: Apartment, id: string, token: string): Promise<Apartment> {
         return this.http.put(`${this.apartmentsURL}/${id}?token=${token}`, JSON.stringify(apartment), {headers: this.headers})
             .toPromise()
-            .then(response => response.json() as Apartment)
+            .then(response => { if (response.status != 204 ){ response.json() as Apartment} })
             .catch(this.handleError)
     }
 
     /**
      * Removes apartment
      * @param id:string
+     * @param token:string
      * @returns {Promise<Apartment>}
      */
     remove(id: string, token: string): Promise<any> {

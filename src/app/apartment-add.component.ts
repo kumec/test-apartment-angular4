@@ -25,10 +25,10 @@ export class ApartmentAddComponent {
 
     buildForm(): void {
         this.apartmentAddForm = this.formBuilder.group({
-            count_rooms: [this.apartment.count_rooms, Validators.required],
-            count_bathrooms: [this.apartment.count_bathrooms, Validators.required],
+            countRooms: [this.apartment.countRooms, Validators.required],
+            countBathrooms: [this.apartment.countBathrooms, Validators.required],
             square: [this.apartment.square, Validators.required],
-            has_parking: [this.apartment.has_parking, Validators.required],
+            hasParking: [this.apartment.hasParking, Validators.required],
             comment: [this.apartment.comment],
             unit: [this.apartment.unit],
             building: [this.apartment.building, Validators.required],
@@ -36,8 +36,8 @@ export class ApartmentAddComponent {
             city: [this.apartment.city, Validators.required],
             region: [this.apartment.region, Validators.required],
             country: [this.apartment.country, Validators.required],
-            zip_code: [this.apartment.zip_code, Validators.required],
-            owner_email: [this.apartment.owner_email, [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
+            zipCode: [this.apartment.zipCode, Validators.required],
+            ownerEmail: [this.apartment.ownerEmail, [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
         });
     }
 

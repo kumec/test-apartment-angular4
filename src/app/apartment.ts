@@ -1,9 +1,9 @@
 export class Apartment {
     id: string;
-    count_rooms: string;
-    count_bathrooms: string;
+    countRooms: string;
+    countBathrooms: string;
     square: string;
-    has_parking: boolean;
+    hasParking: boolean;
     comment: string;
     unit: string;
     building: string;
@@ -11,6 +11,6 @@ export class Apartment {
     city: string;
     region: string;
     country: string;
-    zip_code: string;
-    owner_email: string;
+    zipCode: string;
+    ownerEmail: string;
 }
